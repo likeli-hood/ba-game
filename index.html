@@ -665,7 +665,7 @@ function enableTextSelectionSearch() {
         }
         let keyword = searchInput.value.trim().toLowerCase();
         if(keyword === "") {
-            resultArea.innerHTML = "请输入搜索词，例如: 实习生, 摇滚歌手";
+            resultArea.innerHTML = "请输入搜索词。建议：检查错别字，每次仅搜索一个人物或事物。";
             return;
         }
         
@@ -695,9 +695,9 @@ function enableTextSelectionSearch() {
         // 负面词惩罚
         if(negativeKeywords.some(k => keyword.includes(k))) {
             negativeCount++;
-            resultArea.innerHTML = ` 菊叹气：'唉……' (负面情绪 ${negativeCount}/40)`;
+            resultArea.innerHTML = ` 老爷爷发出了叹气：'唉……' (负面情绪 ${negativeCount}/40)`;
             if(negativeCount >= 40) {
-                resultArea.innerHTML += `<br><br>📖 菊合上了笔记本，离开了。他不想再写更多绯闻了。`;
+                resultArea.innerHTML += `<br><br>📖 老爷爷合上了笔记本，离开了。他不想再写更多绯闻了。`;
                 kikuFound = false;
             }
             updateUI();
